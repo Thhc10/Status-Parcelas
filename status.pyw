@@ -68,15 +68,19 @@ while True:  # Loop
     parcelas_atraso = []
     vetor_pendentes = parcelas_pendentes(dados_json)
 
-    for i in range(len(vetor_pendentes)):
-        if delta_dias(vetor_pendentes[i]) < 0:
-            parcelas_atraso.append(vetor_pendentes[i])
-
-    if not parcelas_atraso:
-        print("A empresa com a CCB: " + read_ccb + ", está em dia.")
+   if vetor_pendentes == "Endosso":
+        print("A empresa com a CCB: " + read_ccb + ", foi endossada.")
 
     else:
-        print("A empresa com a CCB: " + read_ccb + ", está com as seguintes parcelas em atraso:")
-        print(parcelas_atraso)
+        for i in range(len(vetor_pendentes)):
+            if delta_dias(vetor_pendentes[i]) < 0:
+                parcelas_atraso.append(vetor_pendentes[i])
+
+        if not parcelas_atraso:
+            print("A empresa com a CCB: " + read_ccb + ", está em dia.")
+
+        else:
+            print("A empresa com a CCB: " + read_ccb + ", está com as seguintes parcelas em atraso:")
+            print(parcelas_atraso)
 
     print()
