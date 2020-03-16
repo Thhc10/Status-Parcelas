@@ -55,7 +55,7 @@ while True:  # Loop
     read_ccb = values['ccb']
 
     parametros = {"ccbNumber": read_ccb}
-    # Inserir o link da API
+    # Inserir link API
     dados = requests.get('link_api1', params=parametros)
     status_api = dados.status_code
 
@@ -73,9 +73,10 @@ while True:  # Loop
             parcelas_atraso.append(vetor_pendentes[i])
 
     if not parcelas_atraso:
-        print("Nenhuma parcela está em atraso")
+        print("A empresa com a CCB: " + read_ccb + ", está em dia.")
 
     else:
         print("A empresa com a CCB: " + read_ccb + ", está com as seguintes parcelas em atraso:")
         print(parcelas_atraso)
-        print()
+
+    print()
