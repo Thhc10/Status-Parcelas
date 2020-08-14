@@ -1,6 +1,6 @@
 # Status-Parcelas
 
-O programa tem como o objetivo verificar o status de pagamento referente à determinada CDB. Dessa forma é capaz de determinar:
+O programa tem como o objetivo verificar o status de pagamento referente à determinada CDB. Faço as requisições de uma API e com esses dados determino as:
 
 * Empresas que estão em dia;
 
